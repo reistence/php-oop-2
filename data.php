@@ -6,7 +6,11 @@ require_once __DIR__ . "/models/Product.php";
 // DOG PRODUCTS
 $hunter_stainless_bowl = new Bowl("Hunters Stainless Bowl", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/hunter/stainless/steel/food/bowl/2/400/26948_hunter_edelstahlnapf_hs_02_2.jpg", "Steel", 1.1 );
 
+$hunter_stainless_bowl->set_price("£ 3");
+
 $u_bowl = new Bowl("U-Shaped Stand with Bowls", new Category("Dog"),"https://shop-cdn-m.mediazs.com/bilder/ushaped/dog/bowl/stand/with/stainless/steel/bowls/2/400/313525_u_hundebar_02_dsc9180_2.jpg", "Steel", 1.8);
+
+$u_bowl->set_price("£ 27.49");
 
 $sheep_toy = new Toy("Trixie Sheep", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/trixie/sheep/dog/toy/2/140/27908_PLA_Trixie_Schaf_Hundespielzeug_ca__30_cm_Schaf_2.jpg", "Squeaker Toy", ["Whool", "Cotton", "Polyester"] );
 
@@ -43,6 +47,8 @@ $cosma_soup = new Food("Cosma Soup", new Category("Cat"), "https://shop-cdn-m.me
 $brooklyn_snuggle_bed= new Kennel("Brooklyn Snuggle Bed", new Category("Cat"), "https://shop-cdn-m.mediazs.com/bilder/brooklyn/snuggle/bed/0/140/102097_pla_katzenbett_brooklyn_fg_7037_0.jpg", "Indoor", "Whool", "55x50 cm");
 
 $pueblo_cat_den = new Kennel("Peublo Cat Den", new Category("Cat"), "https://shop-cdn-m.mediazs.com/bilder/pueblo/cat/den/2/140/24722_PLA_Katzenhaus_Pueblo_Mix4_809_17_2.jpg", "Indoor", "Wood", "56 x 26 x 42 cm");
+
+$pueblo_cat_den->set_price("£ 51.99");
 
 
 

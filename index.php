@@ -2,7 +2,7 @@
 require_once __DIR__ . "/data.php";
 
 
-// var_dump($products_array[0]);
+var_dump($products_array[0]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ require_once __DIR__ . "/data.php";
     <div class="container">
         <h1 class="text-center my-3">Pet Shop</h1>
         <h2>Products:</h2>
-        <div class="row row-cols-4 my-2 gy-5">
+        <div class="row row-cols-4 my-2 g-5">
             <?php foreach ($products_array as $product) { ?>
                 <div class="col">
                  <div class="card shadow" style="width: 18rem;">
@@ -36,7 +36,8 @@ require_once __DIR__ . "/data.php";
                              };
                              ?>
                         </h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h6 class="card-subtitle mb-2 text-muted"> <?php echo $product->product_kind ?> </h6>
+                        <p class="card-text"></p>
                         <a href="#" class="btn btn-primary">Add to basket</a>
                     </div>
                 </div>
