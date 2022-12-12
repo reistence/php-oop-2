@@ -1,8 +1,25 @@
 <?php
 require_once __DIR__ . "/data.php";
+require_once __DIR__ . "/models/User.php";
+require_once __DIR__ . "/models/Registered_user.php";
+
+$guest1 = new User("guest");
+
+$guest1->set_card(1234567890);
+$guest1->set_expiration("11/2020");
+
+var_dump($guest1);
 
 
-var_dump($products_array[0]);
+$guest2 = new Registered_user("Registered","JohnDoe999", "johndoe@gmail.com");
+$guest2->set_card(987654321);
+$guest2->set_expiration("11/2025");
+$guest2->set_discount();
+$guest2->set_password("xdtcfygukhljk");
+
+
+var_dump($guest2);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,10 +38,25 @@ var_dump($products_array[0]);
     <div class="container">
         <h1 class="text-center my-3">Pet Shop</h1>
         <h2>Products:</h2>
-        <div class="row row-cols-4 my-2 g-5">
+        <div class="wrapper flex-column">
+             <div class="basket">
+               <h5><i class="fa-solid fa-cart-shopping"></i>:</h5> 
+                <ul class="d-flex gap-5 justify-start">
+
+                <?php if (count($basket) > 0) {?>
+                    foreach($basket as $basket_item){
+                        <li> <?php echo $basket_item->name ?></li>
+                    }
+                 <?php } else{ ?>
+                          <li> Empty </li>
+                <?php } ?>
+                </ul>
+        </div>
+
+        <div class="row row-cols-4 row-cols-sm-3 my-1 g-5">
             <?php foreach ($products_array as $product) { ?>
                 <div class="col">
-                 <div class="card shadow" style="width: 18rem;">
+                 <div class="card shadow" >
                     <img src="<?php echo $product->poster ?>" class="card-img-top" alt="<?php echo $product->name ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $product->name ?></h5>
@@ -45,6 +77,9 @@ var_dump($products_array[0]);
                 <?php } ?>
 
         </div>
+       
+        </div>
+
 
     </div>
     

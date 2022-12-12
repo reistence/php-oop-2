@@ -71,6 +71,17 @@ $slim_treat_ball->set_price("8.50");
 $wild_freedom_food->set_price("25.50");
 $cosma_soup->set_price("17.20");
 $brooklyn_snuggle_bed->set_price("38.50");
-$pueblo_cat_den->set_price("£ 51.99");
+$pueblo_cat_den->set_price("51.99");
+
+
+
+//BASKET
+
+$basket = [];
+
+// function addToBasket($index){
+//     $basket[] = $product[$index]->name;
+//     return $basket;
+// }
 
 ?>
