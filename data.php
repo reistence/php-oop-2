@@ -6,13 +6,13 @@ require_once __DIR__ . "/models/Product.php";
 // DOG PRODUCTS
 $hunter_stainless_bowl = new Bowl("Hunters Stainless Bowl", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/hunter/stainless/steel/food/bowl/2/400/26948_hunter_edelstahlnapf_hs_02_2.jpg", "Steel", 1.1 );
 
-$hunter_stainless_bowl->set_price("£ 3");
+
 
 $u_bowl = new Bowl("U-Shaped Stand with Bowls", new Category("Dog"),"https://shop-cdn-m.mediazs.com/bilder/ushaped/dog/bowl/stand/with/stainless/steel/bowls/2/400/313525_u_hundebar_02_dsc9180_2.jpg", "Steel", 1.8);
 
-$u_bowl->set_price("£ 27.49");
 
 $sheep_toy = new Toy("Trixie Sheep", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/trixie/sheep/dog/toy/2/140/27908_PLA_Trixie_Schaf_Hundespielzeug_ca__30_cm_Schaf_2.jpg", "Squeaker Toy", ["Whool", "Cotton", "Polyester"] );
+
 
 $kong_ball = new Toy("Kong Jumbler Ball", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/kong/jumbler/ball/6/140/64496_PLA_KONG_Jumbler_Ball_ML_6.jpg", "Ball", ["rubber", "Polyester"]);
 
@@ -48,12 +48,29 @@ $brooklyn_snuggle_bed= new Kennel("Brooklyn Snuggle Bed", new Category("Cat"), "
 
 $pueblo_cat_den = new Kennel("Peublo Cat Den", new Category("Cat"), "https://shop-cdn-m.mediazs.com/bilder/pueblo/cat/den/2/140/24722_PLA_Katzenhaus_Pueblo_Mix4_809_17_2.jpg", "Indoor", "Wood", "56 x 26 x 42 cm");
 
-$pueblo_cat_den->set_price("£ 51.99");
 
 
 
 // PRODUCTS ARRAY
 $products_array = [$hunter_stainless_bowl, $u_bowl, $sheep_toy, $kong_ball, $greenwoods_dog_food, $rosie_dog_food, $trixie_natura_cabin, $ferplast_dogvilla, $slip_proof_bowl, $trixie_ceramic_bowl, $mouse_toy, $slim_treat_ball, $wild_freedom_food, $cosma_soup, $brooklyn_snuggle_bed, $pueblo_cat_den];
 
+
+//Setting Prices
+$hunter_stainless_bowl->set_price("9.99");
+$u_bowl->set_price("27.49");
+$sheep_toy->set_price("8.50");
+$kong_ball->set_price("5.50");
+$greenwoods_dog_food->set_price("28.50");
+$rosie_dog_food->set_price("18.50");
+$trixie_natura_cabin->set_price("45.80");
+$ferplast_dogvilla->set_price("68.00");
+$slip_proof_bowl->set_price("7.60");
+$trixie_ceramic_bowl->set_price("8.50");
+$mouse_toy->set_price("5.90");
+$slim_treat_ball->set_price("8.50");
+$wild_freedom_food->set_price("25.50");
+$cosma_soup->set_price("17.20");
+$brooklyn_snuggle_bed->set_price("38.50");
+$pueblo_cat_den->set_price("£ 51.99");
 
 ?>

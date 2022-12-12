@@ -37,7 +37,7 @@ var_dump($products_array[0]);
                              ?>
                         </h6>
                           <h6 class="card-subtitle mb-2 text-muted"> <?php echo $product->product_kind ?> </h6>
-                        <p class="card-text"></p>
+                        <p class="card-text"> € <?php echo $product->get_price()?></p>
                         <a href="#" class="btn btn-primary">Add to basket</a>
                     </div>
                 </div>
