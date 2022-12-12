@@ -21,7 +21,7 @@ require_once __DIR__ . "/data.php";
     <div class="container">
         <h1 class="text-center my-3">Pet Shop</h1>
         <h2>Products:</h2>
-        <div class="row row-cols-4 my-5 gy-5">
+        <div class="row row-cols-4 my-2 gy-5">
             <?php foreach ($products_array as $product) { ?>
                 <div class="col">
                  <div class="card shadow" style="width: 18rem;">

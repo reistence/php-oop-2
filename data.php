@@ -47,7 +47,7 @@ $pueblo_cat_den = new Kennel("Peublo Cat Den", new Category("Cat"), "https://sho
 
 
 // PRODUCTS ARRAY
-$products_array = [$hunter_stainless_bowl, $u_bowl, $sheep_toy, $kong_ball, $greenwoods_dog_food, $rosie_dog_food, $trixie_natura_cabin, $ferplast_dogvilla, $slim_treat_ball, $trixie_ceramic_bowl, $mouse_toy, $slim_treat_ball, $wild_freedom_food, $cosma_soup, $brooklyn_snuggle_bed, $pueblo_cat_den];
+$products_array = [$hunter_stainless_bowl, $u_bowl, $sheep_toy, $kong_ball, $greenwoods_dog_food, $rosie_dog_food, $trixie_natura_cabin, $ferplast_dogvilla, $slip_proof_bowl, $trixie_ceramic_bowl, $mouse_toy, $slim_treat_ball, $wild_freedom_food, $cosma_soup, $brooklyn_snuggle_bed, $pueblo_cat_den];
 
 
 ?>
