@@ -2,23 +2,30 @@
 require_once __DIR__ . "/data.php";
 require_once __DIR__ . "/models/User.php";
 require_once __DIR__ . "/models/Registered_user.php";
+require_once __DIR__ . "/models/Basket.php";
+require_once __DIR__ . "/models/Credit_card.php";
 
-$guest1 = new User();
+$guest1 = new User(new Credit_card("12324523465", "10", "2019"));
+$guest1->basket = new Basket;
+$guest1->basket->add_product($hunter_stainless_bowl);
+$guest1->basket->add_product($hunter_stainless_bowl);
 
-$guest1->set_card(1234567890);
-$guest1->set_expiration("11/2020");
-
-var_dump($guest1);
+$guest1->basket->get_basket_total();
+$guest1_total = $guest1->basket->get_basket_total();
 
 
-$guest2 = new Registered_user("Registered","JohnDoe999", "johndoe@gmail.com");
-$guest2->set_card(987654321);
-$guest2->set_expiration("11/2025");
+var_dump($guest1->pay($guest1_total));
+
+$guest2 = new Registered_user(new Credit_card("98765432123456", "10", "2025"), "JohnDoe123", "johndoe@gmail.com");
 $guest2->set_discount();
 $guest2->set_password("xdtcfygukhljk");
+$guest2->basket = new Basket;
+$guest2->basket->add_product($hunter_stainless_bowl);
+$guest2->basket->add_product($hunter_stainless_bowl);
+$guest2->basket->get_basket_total();
+$guest2_total = $guest2->basket->get_basket_total();
 
-
-var_dump($guest2);
+var_dump($guest2->pay($guest2_total));
 
 ?>
 <!DOCTYPE html>

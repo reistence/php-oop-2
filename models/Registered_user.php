@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/User.php";
+require_once __DIR__ . "/Credit_card.php";
 
 
 class Registered_user extends User{
@@ -9,9 +10,9 @@ class Registered_user extends User{
     private $password;
 
 
-    public function __construct( string $username, string $email)
+    public function __construct(Credit_card $credit_card  ,string $username, string $email)
     {
-         parent::__construct("Registered User");
+         parent::__construct($credit_card ,"Registered User");
          $this->username = $username;
          $this->email = $email;
     }
