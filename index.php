@@ -57,8 +57,31 @@ try{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PetShop24</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Promo</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Cats</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Dogs</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+            </div>
+        </div>
+        </nav>
+    </header>
     <div class="container">
-        <h1 class="text-center my-3">Pet Shop</h1>
         <h2>Products:</h2>
         <div class="wrapper flex-column">
              <div class="basket">
@@ -110,7 +133,7 @@ try{
                              <p class="card-text text-muted">Capacity: <?php echo $product->capacity_litre?>l</p>
                         <?php  }?>
                         
-                        <a href="#" class="btn btn-primary">Add to basket</a>
+                        <a href="#" class="btn btn-success">Add to basket</a>
                     </div>
                 </div>
             </div>
