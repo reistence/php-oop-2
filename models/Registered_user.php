@@ -9,9 +9,9 @@ class Registered_user extends User{
     private $password;
 
 
-    public function __construct(string $user_kind, string $username, string $email)
+    public function __construct( string $username, string $email)
     {
-         parent::__construct($user_kind);
+         parent::__construct("Registered User");
          $this->username = $username;
          $this->email = $email;
     }

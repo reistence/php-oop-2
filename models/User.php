@@ -1,13 +1,13 @@
 <?php 
 
 class User{
+     public $user_kind;
      private $card_number;
      private $expiration_date;
      protected $discount;
-     public $user_kind;
      
 
-     public function __construct(string $user_kind){
+     public function __construct(string $user_kind = "guest"){
         $this->user_kind = $user_kind;
      }
 

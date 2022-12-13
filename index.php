@@ -3,7 +3,7 @@ require_once __DIR__ . "/data.php";
 require_once __DIR__ . "/models/User.php";
 require_once __DIR__ . "/models/Registered_user.php";
 
-$guest1 = new User("guest");
+$guest1 = new User();
 
 $guest1->set_card(1234567890);
 $guest1->set_expiration("11/2020");
@@ -40,7 +40,7 @@ var_dump($guest2);
         <h2>Products:</h2>
         <div class="wrapper flex-column">
              <div class="basket">
-               <h5><i class="fa-solid fa-cart-shopping"></i>:</h5> 
+               <div><i class="fa-solid fa-cart-shopping"></i>:</div> 
                 <ul class="d-flex gap-5 justify-start">
 
                 <?php if (count($basket) > 0) {?>
@@ -70,6 +70,25 @@ var_dump($guest2);
                         </h6>
                           <h6 class="card-subtitle mb-2 text-muted"> <?php echo $product->product_kind ?> </h6>
                         <p class="card-text"> € <?php echo $product->get_price()?></p>
+
+                        <?php if(get_class($product) === "Food") { ?>
+                            <p class="card-text text-muted">Quantity: <?php echo $product->quantity?></p>
+                            <p class="card-text text-muted">Ingredients: <?php echo $product->get_ingretients()?></p>
+                        <?php }; ?>
+                         <?php if(get_class($product) === "Toy"){?>
+                            <p class="card-text text-muted">Kind: <?php echo $product->toy_kind?></p>
+                            <p class="card-text text-muted">Materials: <?php echo $product->get_materials()?></p>
+                         <?php };
+                         if(get_class($product) === "Kennel"){?>
+                             <p class="card-text text-muted">Kind: <?php echo $product->kennel_kind?></p>
+                             <p class="card-text text-muted">Dimensions: <?php echo $product->dimensions_cm?></p>
+                             <p class="card-text text-muted"> <?php echo $product->material?></p>
+                         <?php };
+                          if(get_class($product) === "Bowl") {?>
+                             <p class="card-text text-muted">Material: <?php echo $product->material?></p>
+                             <p class="card-text text-muted">Capacity: <?php echo $product->capacity_litre?>l</p>
+                        <?php  }?>
+                        
                         <a href="#" class="btn btn-primary">Add to basket</a>
                     </div>
                 </div>

@@ -1,4 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
+  padding-left: 0.3em !important;
+}
+
+.basket {
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.basket > div {
+  padding: 0;
 }

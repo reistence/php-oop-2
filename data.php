@@ -2,13 +2,22 @@
 
 require_once __DIR__ . "/models/Product.php";
 
+require_once __DIR__ . "/models/Food.php";
+
+require_once __DIR__ . "/models/Toy.php";
+
+require_once __DIR__ . "/models/Kennel.php";
+
+require_once __DIR__ . "/models/Bowl.php";
+
+
 
 // DOG PRODUCTS
 $hunter_stainless_bowl = new Bowl("Hunters Stainless Bowl", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/hunter/stainless/steel/food/bowl/2/400/26948_hunter_edelstahlnapf_hs_02_2.jpg", "Steel", 1.1 );
 
 
 
-$u_bowl = new Bowl("U-Shaped Stand with Bowls", new Category("Dog"),"https://shop-cdn-m.mediazs.com/bilder/ushaped/dog/bowl/stand/with/stainless/steel/bowls/2/400/313525_u_hundebar_02_dsc9180_2.jpg", "Steel", 1.8);
+$u_bowl = new Bowl("U-Shaped Stand", new Category("Dog"),"https://shop-cdn-m.mediazs.com/bilder/ushaped/dog/bowl/stand/with/stainless/steel/bowls/2/400/313525_u_hundebar_02_dsc9180_2.jpg", "Steel", 1.8);
 
 
 $sheep_toy = new Toy("Trixie Sheep", new Category("Dog"), "https://shop-cdn-m.mediazs.com/bilder/trixie/sheep/dog/toy/2/140/27908_PLA_Trixie_Schaf_Hundespielzeug_ca__30_cm_Schaf_2.jpg", "Squeaker Toy", ["Whool", "Cotton", "Polyester"] );
