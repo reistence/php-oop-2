@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/Product.php";
 class Basket{
     private $basket_products = [];
 
@@ -15,6 +16,12 @@ class Basket{
         }
         return $sum;
     }
+
+    // public function get_basket_items(){
+    //     foreach($this->basket_products as $basket_product){
+    //         return "$basket_product->name";
+    //     }
+    // }
 }
 
 

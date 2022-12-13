@@ -1,9 +1,11 @@
 <?php
-require_once __DIR__ . "/User.php";
-require_once __DIR__ . "/Credit_card.php";
+require_once __DIR__ . "/../Traits/Notifiable.php";
+require_once __DIR__ . "/Email.php";
 
 
 class Registered_user extends User{
+
+     use Notifiable; 
 
     public $username;
     public $email;
@@ -19,6 +21,9 @@ class Registered_user extends User{
 
     public function set_discount(){
         $this->discount = 20;
+        $this->set_notification(new Email($this->email, "Hi $this->username as a registered member you get a 20% off!"));
+        $this->send($this->username, "Check out the new notification");
+       
     }
 
     public function set_password($password){

@@ -1,8 +1,9 @@
 <?php 
-require_once __DIR__ . "/Credit_card.php";
-require_once __DIR__ . "/Basket.php";
+
 
 class User{
+    
+
      public $user_kind;
      protected $discount;
      protected $credit_card;
@@ -15,7 +16,7 @@ class User{
      }
      
      public function pay($total){
-      //check if there's any discount to apply to the basket total
+      //check if there's any discount to be applied to the basket total
       if($this->get_discount() === 0){
          return $total = $total;
       }  else{

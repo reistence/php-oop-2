@@ -8,13 +8,14 @@ require_once __DIR__ . "/models/Credit_card.php";
 $guest1 = new User(new Credit_card("12324523465", "10", "2019"));
 $guest1->basket = new Basket;
 $guest1->basket->add_product($hunter_stainless_bowl);
-$guest1->basket->add_product($hunter_stainless_bowl);
+$guest1->basket->add_product($cosma_soup);
+// var_dump($guest1->basket);
 
 $guest1->basket->get_basket_total();
 $guest1_total = $guest1->basket->get_basket_total();
 
 
-var_dump($guest1->pay($guest1_total));
+// var_dump($guest1->pay($guest1_total));
 
 $guest2 = new Registered_user(new Credit_card("98765432123456", "10", "2025"), "JohnDoe123", "johndoe@gmail.com");
 $guest2->set_discount();
@@ -25,7 +26,7 @@ $guest2->basket->add_product($hunter_stainless_bowl);
 $guest2->basket->get_basket_total();
 $guest2_total = $guest2->basket->get_basket_total();
 
-var_dump($guest2->pay($guest2_total));
+// var_dump($guest2->pay($guest2_total));
 
 ?>
 <!DOCTYPE html>
@@ -50,17 +51,16 @@ var_dump($guest2->pay($guest2_total));
                <div><i class="fa-solid fa-cart-shopping"></i>:</div> 
                 <ul class="d-flex gap-5 justify-start">
 
-                <?php if (count($basket) > 0) {?>
-                    foreach($basket as $basket_item){
-                        <li> <?php echo $basket_item->name ?></li>
-                    }
+                <?php if (isset($guest2->basket)) {?>
+                    <li>€<?php echo $guest1_total  ?></li>
+                        
                  <?php } else{ ?>
                           <li> Empty </li>
                 <?php } ?>
                 </ul>
         </div>
 
-        <div class="row row-cols-4 row-cols-sm-3 my-1 g-5">
+        <div class="row row-cols-2  row-cols-md-3 my-1 g-5">
             <?php foreach ($products_array as $product) { ?>
                 <div class="col">
                  <div class="card shadow" >
@@ -70,7 +70,7 @@ var_dump($guest2->pay($guest2_total));
                          <h6 class="card-subtitle mb-2 text-muted">
                             <?php if ($product->category->printCategory() === "Dog") {
                                 echo '<i class="fa-solid fa-dog"></i>';
-                             }else{
+                             } else {
                                 echo '<i class="fa-solid fa-cat"></i>';
                              };
                              ?>
