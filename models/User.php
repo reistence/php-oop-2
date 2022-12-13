@@ -17,16 +17,19 @@ class User{
      
      public function pay($total){
       //check if there's any discount to be applied to the basket total
-      if($this->get_discount() === 0){
-         return $total = $total;
+      if($this->get_discount() === 0 || is_null($this->discount)){
+          $total = $total;
       }  else{
-         return $total = $total - (($this->get_discount() * $total) / 100);
+          $total = $total - (($this->get_discount() * $total) / 100);
       }
       // then check the validity of the credit card
-      if($this->credit_card->get_exp_y() > date("Y") || $this->credit_card->get_exp_y() === date("Y") && $this->credit_card->get_exp_m() <= date("m")){
+      if(
+         $this->credit_card->get_exp_y() > date("Y") || $this->credit_card->get_exp_y() === date("Y") && $this->credit_card->get_exp_m() <= date("m")
+         )
+      {
          return "Payment went through";
       } else{
-         return "Payment Error: Card expired";
+         throw new Exception("Payment Error: Card expired");
       }
      }
 

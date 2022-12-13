@@ -22,7 +22,7 @@ class Registered_user extends User{
     public function set_discount(){
         $this->discount = 20;
         $this->set_notification(new Email($this->email, "Hi $this->username as a registered member you get a 20% off!"));
-        $this->send($this->username, "Check out the new notification");
+        $this->send($this->username, "check out the new notification: ");
        
     }
 

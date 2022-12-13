@@ -5,26 +5,40 @@ require_once __DIR__ . "/models/Registered_user.php";
 require_once __DIR__ . "/models/Basket.php";
 require_once __DIR__ . "/models/Credit_card.php";
 
-$guest1 = new User(new Credit_card("12324523465", "10", "2019"));
-$guest1->basket = new Basket;
-$guest1->basket->add_product($hunter_stainless_bowl);
-$guest1->basket->add_product($cosma_soup);
-// var_dump($guest1->basket);
 
-$guest1->basket->get_basket_total();
-$guest1_total = $guest1->basket->get_basket_total();
+//Guest user
+// try{
+//     $guest1 = new User(new Credit_card("12324523465", "10", "2018"));
+//     $guest1->basket = new Basket;
+//     $guest1->basket->add_product($hunter_stainless_bowl);
+//     $guest1->basket->add_product($cosma_soup);
 
+//     $guest1->basket->get_basket_total();
+//     $guest1_total = $guest1->basket->get_basket_total();
+//     $guest1->pay($guest1_total);
 
+// } catch(Exception $err) {
+//      echo "Error: " . $err->getMessage();
+// }
 // var_dump($guest1->pay($guest1_total));
 
-$guest2 = new Registered_user(new Credit_card("98765432123456", "10", "2025"), "JohnDoe123", "johndoe@gmail.com");
-$guest2->set_discount();
-$guest2->set_password("xdtcfygukhljk");
-$guest2->basket = new Basket;
-$guest2->basket->add_product($hunter_stainless_bowl);
-$guest2->basket->add_product($hunter_stainless_bowl);
-$guest2->basket->get_basket_total();
-$guest2_total = $guest2->basket->get_basket_total();
+
+//Registered User
+try{
+    $guest2 = new Registered_user(new Credit_card("98765432123456", "10", "2021"), "JohnDoe123", "johndoe@gmail.com");
+    $guest2->set_discount();
+    $guest2->set_password("xdtcfygukhljk");
+    $guest2->basket = new Basket;
+    $guest2->basket->add_product($hunter_stainless_bowl);
+    $guest2->basket->add_product($hunter_stainless_bowl);
+    $guest2->basket->get_basket_total();
+    $guest2_total = $guest2->basket->get_basket_total();
+    $guest2->pay($guest2_total);
+
+} catch (Exception $err){
+         echo "Error: " . $err->getMessage();
+
+}
 
 // var_dump($guest2->pay($guest2_total));
 
@@ -52,7 +66,7 @@ $guest2_total = $guest2->basket->get_basket_total();
                 <ul class="d-flex gap-5 justify-start">
 
                 <?php if (isset($guest2->basket)) {?>
-                    <li>€<?php echo $guest1_total  ?></li>
+                    <li>€<?php echo $guest2_total  ?></li>
                         
                  <?php } else{ ?>
                           <li> Empty </li>
